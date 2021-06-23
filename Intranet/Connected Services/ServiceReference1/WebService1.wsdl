@@ -1,0 +1,2189 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="ListarPaciente">
+        <s:complexType />
+      </s:element>
+      <s:element name="ListarPacienteResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ListarPacienteResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AgregarPaciente">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="idPaciente" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="nombre" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="apellidoPaterno" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="apellidoMaterno" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="dni" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="edad" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sexo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="fechaNacimiento" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="estadoCivil" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ocupacion" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="direccion" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="telefono" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="fechaIngreso" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AgregarPacienteResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="AgregarPacienteResult" type="tns:ArrayOfString" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfString">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="string" nillable="true" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="EliminarPaciente">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="idPaciente" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="EliminarPacienteResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="EliminarPacienteResult" type="tns:ArrayOfString" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="BuscarPaciente">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="idPaciente" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="BuscarPacienteResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="BuscarPacienteResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ActualizarPaciente">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="idPaciente" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="nombre" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="apellidoPaterno" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="apellidoMaterno" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="dni" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="edad" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sexo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="fechaNacimiento" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="estadoCivil" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ocupacion" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="direccion" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="telefono" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="fechaIngreso" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ActualizarPacienteResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ActualizarPacienteResult" type="tns:ArrayOfString" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ListarHospital">
+        <s:complexType />
+      </s:element>
+      <s:element name="ListarHospitalResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ListarHospitalResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AgregarHospitales">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="idHo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="nombreHospital" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="direccion" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AgregarHospitalesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="AgregarHospitalesResult" type="tns:ArrayOfString" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="EliminarHospital">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="idHo" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="EliminarHospitalResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="EliminarHospitalResult" type="tns:ArrayOfString" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="BuscarHospital">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="idHo" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="BuscarHospitalResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="BuscarHospitalResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ActualizarHospitales">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="idHo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="nombreHospital" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="direccion" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ActualizarHospitalesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ActualizarHospitalesResult" type="tns:ArrayOfString" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ListarHistorias">
+        <s:complexType />
+      </s:element>
+      <s:element name="ListarHistoriasResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ListarHistoriasResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AgregarHistorias">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="idHistoria" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="peso" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="talla" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="motivo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sintomas" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="adicciones" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="motivoConsulta" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="idPaciente" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="idDoctor" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="idUsuario" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="idHospital" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="idAntecedentesP" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="idAntecedentesF" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="idAntecedentesQ" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="codDiagnostico" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="fechaRegistro" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AgregarHistoriasResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="AgregarHistoriasResult" type="tns:ArrayOfString" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="EliminarHistoria">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="idHistoria" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="EliminarHistoriaResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="EliminarHistoriaResult" type="tns:ArrayOfString" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="BuscarHistoria">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="idHistoria" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="BuscarHistoriaResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="BuscarHistoriaResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ActualizarHistorias">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="idHistoria" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="peso" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="talla" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="motivo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sintomas" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="adicciones" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="motivoConsulta" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="idPaciente" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="idDoctor" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="idUsuario" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="idHospital" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="idAntecedentesP" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="idAntecedentesF" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="idAntecedentesQ" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="codDiagnostico" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="fechaRegistro" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ActualizarHistoriasResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ActualizarHistoriasResult" type="tns:ArrayOfString" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ListarUsuarios">
+        <s:complexType />
+      </s:element>
+      <s:element name="ListarUsuariosResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ListarUsuariosResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AgregarUsuario">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="idUsuario" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="usuario" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="contrasenia" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AgregarUsuarioResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="AgregarUsuarioResult" type="tns:ArrayOfString" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="EliminarUsuario">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="idUsuario" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="EliminarUsuarioResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="EliminarUsuarioResult" type="tns:ArrayOfString" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="BuscarUsuario">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="idUsuario" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="BuscarUsuarioResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="BuscarUsuarioResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ActualizarUsuario">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="idUsuario" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="usuario" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="contrasenia" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ActualizarUsuarioResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ActualizarUsuarioResult" type="tns:ArrayOfString" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Listardoctor">
+        <s:complexType />
+      </s:element>
+      <s:element name="ListardoctorResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ListardoctorResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AgregarDoctores">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="IDdoctor" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="nombre" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="apellidoPaterno" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="apellidoMaterno" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Especialidad" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="direccion" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="telefono" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="idHospital" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AgregarDoctoresResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="AgregarDoctoresResult" type="tns:ArrayOfString" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="EliminarDoctor">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="idDoctor" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="EliminarDoctorResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="EliminarDoctorResult" type="tns:ArrayOfString" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="BuscarDoctor">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="idDoctor" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="BuscarDoctorResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="BuscarDoctorResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ActualizarDoctores">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="IDdoctor" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="nombre" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="apellidoPaterno" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="apellidoMaterno" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Especialidad" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="direccion" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="telefono" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="idHospital" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ActualizarDoctoresResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ActualizarDoctoresResult" type="tns:ArrayOfString" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ListarDiagnostico">
+        <s:complexType />
+      </s:element>
+      <s:element name="ListarDiagnosticoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ListarDiagnosticoResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AgregarDiagnostico">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="codDiagnostico" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="descripcion" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AgregarDiagnosticoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="AgregarDiagnosticoResult" type="tns:ArrayOfString" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="EliminarDiagnostico">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="codDiagnostico" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="EliminarDiagnosticoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="EliminarDiagnosticoResult" type="tns:ArrayOfString" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="BuscarDiagnostico">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="codDiagnostico" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="BuscarDiagnosticoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="BuscarDiagnosticoResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ActualizarDiagnostico">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="codDiagnostico" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="descripcion" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ActualizarDiagnosticoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ActualizarDiagnosticoResult" type="tns:ArrayOfString" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ListarAntecedentesFamiliares">
+        <s:complexType />
+      </s:element>
+      <s:element name="ListarAntecedentesFamiliaresResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ListarAntecedentesFamiliaresResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AgregarAntecedentesF">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="idAntecedenteF" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="diabetes" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="cancer" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="tuberculosis" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ipertencion" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sida" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="covid" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="otrasenfermedades" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AgregarAntecedentesFResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="AgregarAntecedentesFResult" type="tns:ArrayOfString" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="EliminarAntecedentesF">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="idAntecedenteF" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="EliminarAntecedentesFResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="EliminarAntecedentesFResult" type="tns:ArrayOfString" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="BuscarAntecedentesF">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="idAntecedenteF" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="BuscarAntecedentesFResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="BuscarAntecedentesFResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ActualizarAntecedentesF">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="idAntecedenteF" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="diabetes" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="cancer" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="tuberculosis" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ipertencion" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sida" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="covid" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="otrasenfermedades" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ActualizarAntecedentesFResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ActualizarAntecedentesFResult" type="tns:ArrayOfString" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ListarAntecedentesPersonales">
+        <s:complexType />
+      </s:element>
+      <s:element name="ListarAntecedentesPersonalesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ListarAntecedentesPersonalesResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AgregarAntecedentesP">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="idAntecedenteP" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="relacionesSexuales" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="edadSexInicio" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sexFrecuencia" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="nroParejas" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="usasProteccion" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="vacunaSarampion" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="vacunaViruela" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="vacunaRabia" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="vacunaFiebreA" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="vacunaHepatitis" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="otrasVacunas" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AgregarAntecedentesPResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="AgregarAntecedentesPResult" type="tns:ArrayOfString" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="EliminarAntecedentesP">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="idAntecedenteP" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="EliminarAntecedentesPResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="EliminarAntecedentesPResult" type="tns:ArrayOfString" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="BuscarAntecedentesP">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="idAntecedenteP" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="BuscarAntecedentesPResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="BuscarAntecedentesPResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ActualizarAntecedentesP">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="idAntecedenteP" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="relacionesSexuales" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="edadSexInicio" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sexFrecuencia" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="nroParejas" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="usasProteccion" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="vacunaSarampion" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="vacunaViruela" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="vacunaRabia" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="vacunaFiebreA" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="vacunaHepatitis" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="otrasVacunas" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ActualizarAntecedentesPResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ActualizarAntecedentesPResult" type="tns:ArrayOfString" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ListarAntecedentesQuirurjicoss">
+        <s:complexType />
+      </s:element>
+      <s:element name="ListarAntecedentesQuirurjicossResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ListarAntecedentesQuirurjicossResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AgregarAntecedentesQ">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="idAntecedenteQ" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="tuvoIntervencion" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="nroVeces" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="causaOperacion" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="alergias" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="queAlergias" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sufreDiabetes" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sufreEpilepsia" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sufreHipertension" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="otrasEnfermedades" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="medicamentos" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="queMedicamento" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AgregarAntecedentesQResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="AgregarAntecedentesQResult" type="tns:ArrayOfString" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="EliminarAntecedentesQ">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="idAntecedenteQ" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="EliminarAntecedentesQResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="EliminarAntecedentesQResult" type="tns:ArrayOfString" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="BuscarAntecedentesQ">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="idAntecedenteQ" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="BuscarAntecedentesQResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="BuscarAntecedentesQResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ActualizarAntecedentesQ">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="idAntecedenteQ" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="tuvoIntervencion" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="nroVeces" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="causaOperacion" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="alergias" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="queAlergias" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sufreDiabetes" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sufreEpilepsia" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sufreHipertension" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="otrasEnfermedades" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="medicamentos" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="queMedicamento" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ActualizarAntecedentesQResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ActualizarAntecedentesQResult" type="tns:ArrayOfString" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="ListarPacienteSoapIn">
+    <wsdl:part name="parameters" element="tns:ListarPaciente" />
+  </wsdl:message>
+  <wsdl:message name="ListarPacienteSoapOut">
+    <wsdl:part name="parameters" element="tns:ListarPacienteResponse" />
+  </wsdl:message>
+  <wsdl:message name="AgregarPacienteSoapIn">
+    <wsdl:part name="parameters" element="tns:AgregarPaciente" />
+  </wsdl:message>
+  <wsdl:message name="AgregarPacienteSoapOut">
+    <wsdl:part name="parameters" element="tns:AgregarPacienteResponse" />
+  </wsdl:message>
+  <wsdl:message name="EliminarPacienteSoapIn">
+    <wsdl:part name="parameters" element="tns:EliminarPaciente" />
+  </wsdl:message>
+  <wsdl:message name="EliminarPacienteSoapOut">
+    <wsdl:part name="parameters" element="tns:EliminarPacienteResponse" />
+  </wsdl:message>
+  <wsdl:message name="BuscarPacienteSoapIn">
+    <wsdl:part name="parameters" element="tns:BuscarPaciente" />
+  </wsdl:message>
+  <wsdl:message name="BuscarPacienteSoapOut">
+    <wsdl:part name="parameters" element="tns:BuscarPacienteResponse" />
+  </wsdl:message>
+  <wsdl:message name="ActualizarPacienteSoapIn">
+    <wsdl:part name="parameters" element="tns:ActualizarPaciente" />
+  </wsdl:message>
+  <wsdl:message name="ActualizarPacienteSoapOut">
+    <wsdl:part name="parameters" element="tns:ActualizarPacienteResponse" />
+  </wsdl:message>
+  <wsdl:message name="ListarHospitalSoapIn">
+    <wsdl:part name="parameters" element="tns:ListarHospital" />
+  </wsdl:message>
+  <wsdl:message name="ListarHospitalSoapOut">
+    <wsdl:part name="parameters" element="tns:ListarHospitalResponse" />
+  </wsdl:message>
+  <wsdl:message name="AgregarHospitalesSoapIn">
+    <wsdl:part name="parameters" element="tns:AgregarHospitales" />
+  </wsdl:message>
+  <wsdl:message name="AgregarHospitalesSoapOut">
+    <wsdl:part name="parameters" element="tns:AgregarHospitalesResponse" />
+  </wsdl:message>
+  <wsdl:message name="EliminarHospitalSoapIn">
+    <wsdl:part name="parameters" element="tns:EliminarHospital" />
+  </wsdl:message>
+  <wsdl:message name="EliminarHospitalSoapOut">
+    <wsdl:part name="parameters" element="tns:EliminarHospitalResponse" />
+  </wsdl:message>
+  <wsdl:message name="BuscarHospitalSoapIn">
+    <wsdl:part name="parameters" element="tns:BuscarHospital" />
+  </wsdl:message>
+  <wsdl:message name="BuscarHospitalSoapOut">
+    <wsdl:part name="parameters" element="tns:BuscarHospitalResponse" />
+  </wsdl:message>
+  <wsdl:message name="ActualizarHospitalesSoapIn">
+    <wsdl:part name="parameters" element="tns:ActualizarHospitales" />
+  </wsdl:message>
+  <wsdl:message name="ActualizarHospitalesSoapOut">
+    <wsdl:part name="parameters" element="tns:ActualizarHospitalesResponse" />
+  </wsdl:message>
+  <wsdl:message name="ListarHistoriasSoapIn">
+    <wsdl:part name="parameters" element="tns:ListarHistorias" />
+  </wsdl:message>
+  <wsdl:message name="ListarHistoriasSoapOut">
+    <wsdl:part name="parameters" element="tns:ListarHistoriasResponse" />
+  </wsdl:message>
+  <wsdl:message name="AgregarHistoriasSoapIn">
+    <wsdl:part name="parameters" element="tns:AgregarHistorias" />
+  </wsdl:message>
+  <wsdl:message name="AgregarHistoriasSoapOut">
+    <wsdl:part name="parameters" element="tns:AgregarHistoriasResponse" />
+  </wsdl:message>
+  <wsdl:message name="EliminarHistoriaSoapIn">
+    <wsdl:part name="parameters" element="tns:EliminarHistoria" />
+  </wsdl:message>
+  <wsdl:message name="EliminarHistoriaSoapOut">
+    <wsdl:part name="parameters" element="tns:EliminarHistoriaResponse" />
+  </wsdl:message>
+  <wsdl:message name="BuscarHistoriaSoapIn">
+    <wsdl:part name="parameters" element="tns:BuscarHistoria" />
+  </wsdl:message>
+  <wsdl:message name="BuscarHistoriaSoapOut">
+    <wsdl:part name="parameters" element="tns:BuscarHistoriaResponse" />
+  </wsdl:message>
+  <wsdl:message name="ActualizarHistoriasSoapIn">
+    <wsdl:part name="parameters" element="tns:ActualizarHistorias" />
+  </wsdl:message>
+  <wsdl:message name="ActualizarHistoriasSoapOut">
+    <wsdl:part name="parameters" element="tns:ActualizarHistoriasResponse" />
+  </wsdl:message>
+  <wsdl:message name="ListarUsuariosSoapIn">
+    <wsdl:part name="parameters" element="tns:ListarUsuarios" />
+  </wsdl:message>
+  <wsdl:message name="ListarUsuariosSoapOut">
+    <wsdl:part name="parameters" element="tns:ListarUsuariosResponse" />
+  </wsdl:message>
+  <wsdl:message name="AgregarUsuarioSoapIn">
+    <wsdl:part name="parameters" element="tns:AgregarUsuario" />
+  </wsdl:message>
+  <wsdl:message name="AgregarUsuarioSoapOut">
+    <wsdl:part name="parameters" element="tns:AgregarUsuarioResponse" />
+  </wsdl:message>
+  <wsdl:message name="EliminarUsuarioSoapIn">
+    <wsdl:part name="parameters" element="tns:EliminarUsuario" />
+  </wsdl:message>
+  <wsdl:message name="EliminarUsuarioSoapOut">
+    <wsdl:part name="parameters" element="tns:EliminarUsuarioResponse" />
+  </wsdl:message>
+  <wsdl:message name="BuscarUsuarioSoapIn">
+    <wsdl:part name="parameters" element="tns:BuscarUsuario" />
+  </wsdl:message>
+  <wsdl:message name="BuscarUsuarioSoapOut">
+    <wsdl:part name="parameters" element="tns:BuscarUsuarioResponse" />
+  </wsdl:message>
+  <wsdl:message name="ActualizarUsuarioSoapIn">
+    <wsdl:part name="parameters" element="tns:ActualizarUsuario" />
+  </wsdl:message>
+  <wsdl:message name="ActualizarUsuarioSoapOut">
+    <wsdl:part name="parameters" element="tns:ActualizarUsuarioResponse" />
+  </wsdl:message>
+  <wsdl:message name="ListardoctorSoapIn">
+    <wsdl:part name="parameters" element="tns:Listardoctor" />
+  </wsdl:message>
+  <wsdl:message name="ListardoctorSoapOut">
+    <wsdl:part name="parameters" element="tns:ListardoctorResponse" />
+  </wsdl:message>
+  <wsdl:message name="AgregarDoctoresSoapIn">
+    <wsdl:part name="parameters" element="tns:AgregarDoctores" />
+  </wsdl:message>
+  <wsdl:message name="AgregarDoctoresSoapOut">
+    <wsdl:part name="parameters" element="tns:AgregarDoctoresResponse" />
+  </wsdl:message>
+  <wsdl:message name="EliminarDoctorSoapIn">
+    <wsdl:part name="parameters" element="tns:EliminarDoctor" />
+  </wsdl:message>
+  <wsdl:message name="EliminarDoctorSoapOut">
+    <wsdl:part name="parameters" element="tns:EliminarDoctorResponse" />
+  </wsdl:message>
+  <wsdl:message name="BuscarDoctorSoapIn">
+    <wsdl:part name="parameters" element="tns:BuscarDoctor" />
+  </wsdl:message>
+  <wsdl:message name="BuscarDoctorSoapOut">
+    <wsdl:part name="parameters" element="tns:BuscarDoctorResponse" />
+  </wsdl:message>
+  <wsdl:message name="ActualizarDoctoresSoapIn">
+    <wsdl:part name="parameters" element="tns:ActualizarDoctores" />
+  </wsdl:message>
+  <wsdl:message name="ActualizarDoctoresSoapOut">
+    <wsdl:part name="parameters" element="tns:ActualizarDoctoresResponse" />
+  </wsdl:message>
+  <wsdl:message name="ListarDiagnosticoSoapIn">
+    <wsdl:part name="parameters" element="tns:ListarDiagnostico" />
+  </wsdl:message>
+  <wsdl:message name="ListarDiagnosticoSoapOut">
+    <wsdl:part name="parameters" element="tns:ListarDiagnosticoResponse" />
+  </wsdl:message>
+  <wsdl:message name="AgregarDiagnosticoSoapIn">
+    <wsdl:part name="parameters" element="tns:AgregarDiagnostico" />
+  </wsdl:message>
+  <wsdl:message name="AgregarDiagnosticoSoapOut">
+    <wsdl:part name="parameters" element="tns:AgregarDiagnosticoResponse" />
+  </wsdl:message>
+  <wsdl:message name="EliminarDiagnosticoSoapIn">
+    <wsdl:part name="parameters" element="tns:EliminarDiagnostico" />
+  </wsdl:message>
+  <wsdl:message name="EliminarDiagnosticoSoapOut">
+    <wsdl:part name="parameters" element="tns:EliminarDiagnosticoResponse" />
+  </wsdl:message>
+  <wsdl:message name="BuscarDiagnosticoSoapIn">
+    <wsdl:part name="parameters" element="tns:BuscarDiagnostico" />
+  </wsdl:message>
+  <wsdl:message name="BuscarDiagnosticoSoapOut">
+    <wsdl:part name="parameters" element="tns:BuscarDiagnosticoResponse" />
+  </wsdl:message>
+  <wsdl:message name="ActualizarDiagnosticoSoapIn">
+    <wsdl:part name="parameters" element="tns:ActualizarDiagnostico" />
+  </wsdl:message>
+  <wsdl:message name="ActualizarDiagnosticoSoapOut">
+    <wsdl:part name="parameters" element="tns:ActualizarDiagnosticoResponse" />
+  </wsdl:message>
+  <wsdl:message name="ListarAntecedentesFamiliaresSoapIn">
+    <wsdl:part name="parameters" element="tns:ListarAntecedentesFamiliares" />
+  </wsdl:message>
+  <wsdl:message name="ListarAntecedentesFamiliaresSoapOut">
+    <wsdl:part name="parameters" element="tns:ListarAntecedentesFamiliaresResponse" />
+  </wsdl:message>
+  <wsdl:message name="AgregarAntecedentesFSoapIn">
+    <wsdl:part name="parameters" element="tns:AgregarAntecedentesF" />
+  </wsdl:message>
+  <wsdl:message name="AgregarAntecedentesFSoapOut">
+    <wsdl:part name="parameters" element="tns:AgregarAntecedentesFResponse" />
+  </wsdl:message>
+  <wsdl:message name="EliminarAntecedentesFSoapIn">
+    <wsdl:part name="parameters" element="tns:EliminarAntecedentesF" />
+  </wsdl:message>
+  <wsdl:message name="EliminarAntecedentesFSoapOut">
+    <wsdl:part name="parameters" element="tns:EliminarAntecedentesFResponse" />
+  </wsdl:message>
+  <wsdl:message name="BuscarAntecedentesFSoapIn">
+    <wsdl:part name="parameters" element="tns:BuscarAntecedentesF" />
+  </wsdl:message>
+  <wsdl:message name="BuscarAntecedentesFSoapOut">
+    <wsdl:part name="parameters" element="tns:BuscarAntecedentesFResponse" />
+  </wsdl:message>
+  <wsdl:message name="ActualizarAntecedentesFSoapIn">
+    <wsdl:part name="parameters" element="tns:ActualizarAntecedentesF" />
+  </wsdl:message>
+  <wsdl:message name="ActualizarAntecedentesFSoapOut">
+    <wsdl:part name="parameters" element="tns:ActualizarAntecedentesFResponse" />
+  </wsdl:message>
+  <wsdl:message name="ListarAntecedentesPersonalesSoapIn">
+    <wsdl:part name="parameters" element="tns:ListarAntecedentesPersonales" />
+  </wsdl:message>
+  <wsdl:message name="ListarAntecedentesPersonalesSoapOut">
+    <wsdl:part name="parameters" element="tns:ListarAntecedentesPersonalesResponse" />
+  </wsdl:message>
+  <wsdl:message name="AgregarAntecedentesPSoapIn">
+    <wsdl:part name="parameters" element="tns:AgregarAntecedentesP" />
+  </wsdl:message>
+  <wsdl:message name="AgregarAntecedentesPSoapOut">
+    <wsdl:part name="parameters" element="tns:AgregarAntecedentesPResponse" />
+  </wsdl:message>
+  <wsdl:message name="EliminarAntecedentesPSoapIn">
+    <wsdl:part name="parameters" element="tns:EliminarAntecedentesP" />
+  </wsdl:message>
+  <wsdl:message name="EliminarAntecedentesPSoapOut">
+    <wsdl:part name="parameters" element="tns:EliminarAntecedentesPResponse" />
+  </wsdl:message>
+  <wsdl:message name="BuscarAntecedentesPSoapIn">
+    <wsdl:part name="parameters" element="tns:BuscarAntecedentesP" />
+  </wsdl:message>
+  <wsdl:message name="BuscarAntecedentesPSoapOut">
+    <wsdl:part name="parameters" element="tns:BuscarAntecedentesPResponse" />
+  </wsdl:message>
+  <wsdl:message name="ActualizarAntecedentesPSoapIn">
+    <wsdl:part name="parameters" element="tns:ActualizarAntecedentesP" />
+  </wsdl:message>
+  <wsdl:message name="ActualizarAntecedentesPSoapOut">
+    <wsdl:part name="parameters" element="tns:ActualizarAntecedentesPResponse" />
+  </wsdl:message>
+  <wsdl:message name="ListarAntecedentesQuirurjicossSoapIn">
+    <wsdl:part name="parameters" element="tns:ListarAntecedentesQuirurjicoss" />
+  </wsdl:message>
+  <wsdl:message name="ListarAntecedentesQuirurjicossSoapOut">
+    <wsdl:part name="parameters" element="tns:ListarAntecedentesQuirurjicossResponse" />
+  </wsdl:message>
+  <wsdl:message name="AgregarAntecedentesQSoapIn">
+    <wsdl:part name="parameters" element="tns:AgregarAntecedentesQ" />
+  </wsdl:message>
+  <wsdl:message name="AgregarAntecedentesQSoapOut">
+    <wsdl:part name="parameters" element="tns:AgregarAntecedentesQResponse" />
+  </wsdl:message>
+  <wsdl:message name="EliminarAntecedentesQSoapIn">
+    <wsdl:part name="parameters" element="tns:EliminarAntecedentesQ" />
+  </wsdl:message>
+  <wsdl:message name="EliminarAntecedentesQSoapOut">
+    <wsdl:part name="parameters" element="tns:EliminarAntecedentesQResponse" />
+  </wsdl:message>
+  <wsdl:message name="BuscarAntecedentesQSoapIn">
+    <wsdl:part name="parameters" element="tns:BuscarAntecedentesQ" />
+  </wsdl:message>
+  <wsdl:message name="BuscarAntecedentesQSoapOut">
+    <wsdl:part name="parameters" element="tns:BuscarAntecedentesQResponse" />
+  </wsdl:message>
+  <wsdl:message name="ActualizarAntecedentesQSoapIn">
+    <wsdl:part name="parameters" element="tns:ActualizarAntecedentesQ" />
+  </wsdl:message>
+  <wsdl:message name="ActualizarAntecedentesQSoapOut">
+    <wsdl:part name="parameters" element="tns:ActualizarAntecedentesQResponse" />
+  </wsdl:message>
+  <wsdl:portType name="WebService1Soap">
+    <wsdl:operation name="ListarPaciente">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Listar pacientes</wsdl:documentation>
+      <wsdl:input message="tns:ListarPacienteSoapIn" />
+      <wsdl:output message="tns:ListarPacienteSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AgregarPaciente">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Agregar paciente</wsdl:documentation>
+      <wsdl:input message="tns:AgregarPacienteSoapIn" />
+      <wsdl:output message="tns:AgregarPacienteSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="EliminarPaciente">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Eliminar paciente</wsdl:documentation>
+      <wsdl:input message="tns:EliminarPacienteSoapIn" />
+      <wsdl:output message="tns:EliminarPacienteSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="BuscarPaciente">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Buscar paciente</wsdl:documentation>
+      <wsdl:input message="tns:BuscarPacienteSoapIn" />
+      <wsdl:output message="tns:BuscarPacienteSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ActualizarPaciente">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Actualizar paciente</wsdl:documentation>
+      <wsdl:input message="tns:ActualizarPacienteSoapIn" />
+      <wsdl:output message="tns:ActualizarPacienteSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ListarHospital">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Listar hospitales</wsdl:documentation>
+      <wsdl:input message="tns:ListarHospitalSoapIn" />
+      <wsdl:output message="tns:ListarHospitalSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AgregarHospitales">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Agregar hospitales</wsdl:documentation>
+      <wsdl:input message="tns:AgregarHospitalesSoapIn" />
+      <wsdl:output message="tns:AgregarHospitalesSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="EliminarHospital">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Eliminar hospitales</wsdl:documentation>
+      <wsdl:input message="tns:EliminarHospitalSoapIn" />
+      <wsdl:output message="tns:EliminarHospitalSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="BuscarHospital">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Buscar hospitales</wsdl:documentation>
+      <wsdl:input message="tns:BuscarHospitalSoapIn" />
+      <wsdl:output message="tns:BuscarHospitalSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ActualizarHospitales">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Actualizar hospitales</wsdl:documentation>
+      <wsdl:input message="tns:ActualizarHospitalesSoapIn" />
+      <wsdl:output message="tns:ActualizarHospitalesSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ListarHistorias">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Listar historias</wsdl:documentation>
+      <wsdl:input message="tns:ListarHistoriasSoapIn" />
+      <wsdl:output message="tns:ListarHistoriasSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AgregarHistorias">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Agregar historia</wsdl:documentation>
+      <wsdl:input message="tns:AgregarHistoriasSoapIn" />
+      <wsdl:output message="tns:AgregarHistoriasSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="EliminarHistoria">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Eliminar Historia</wsdl:documentation>
+      <wsdl:input message="tns:EliminarHistoriaSoapIn" />
+      <wsdl:output message="tns:EliminarHistoriaSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="BuscarHistoria">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Buscar Historia</wsdl:documentation>
+      <wsdl:input message="tns:BuscarHistoriaSoapIn" />
+      <wsdl:output message="tns:BuscarHistoriaSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ActualizarHistorias">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Actualizar historia</wsdl:documentation>
+      <wsdl:input message="tns:ActualizarHistoriasSoapIn" />
+      <wsdl:output message="tns:ActualizarHistoriasSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ListarUsuarios">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Listar Usuario</wsdl:documentation>
+      <wsdl:input message="tns:ListarUsuariosSoapIn" />
+      <wsdl:output message="tns:ListarUsuariosSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AgregarUsuario">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Agregar Usuario</wsdl:documentation>
+      <wsdl:input message="tns:AgregarUsuarioSoapIn" />
+      <wsdl:output message="tns:AgregarUsuarioSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="EliminarUsuario">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Eliminar Usuario</wsdl:documentation>
+      <wsdl:input message="tns:EliminarUsuarioSoapIn" />
+      <wsdl:output message="tns:EliminarUsuarioSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="BuscarUsuario">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Buscar Usuario</wsdl:documentation>
+      <wsdl:input message="tns:BuscarUsuarioSoapIn" />
+      <wsdl:output message="tns:BuscarUsuarioSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ActualizarUsuario">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Actualizar Usuario</wsdl:documentation>
+      <wsdl:input message="tns:ActualizarUsuarioSoapIn" />
+      <wsdl:output message="tns:ActualizarUsuarioSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Listardoctor">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Listar Doctores</wsdl:documentation>
+      <wsdl:input message="tns:ListardoctorSoapIn" />
+      <wsdl:output message="tns:ListardoctorSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AgregarDoctores">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Agregar Doctores</wsdl:documentation>
+      <wsdl:input message="tns:AgregarDoctoresSoapIn" />
+      <wsdl:output message="tns:AgregarDoctoresSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="EliminarDoctor">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Eliminar Doctor</wsdl:documentation>
+      <wsdl:input message="tns:EliminarDoctorSoapIn" />
+      <wsdl:output message="tns:EliminarDoctorSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="BuscarDoctor">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Buscar Doctor</wsdl:documentation>
+      <wsdl:input message="tns:BuscarDoctorSoapIn" />
+      <wsdl:output message="tns:BuscarDoctorSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ActualizarDoctores">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Actualizar Doctores</wsdl:documentation>
+      <wsdl:input message="tns:ActualizarDoctoresSoapIn" />
+      <wsdl:output message="tns:ActualizarDoctoresSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ListarDiagnostico">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Listar Diagnostico</wsdl:documentation>
+      <wsdl:input message="tns:ListarDiagnosticoSoapIn" />
+      <wsdl:output message="tns:ListarDiagnosticoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AgregarDiagnostico">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Agregar Diagnostico</wsdl:documentation>
+      <wsdl:input message="tns:AgregarDiagnosticoSoapIn" />
+      <wsdl:output message="tns:AgregarDiagnosticoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="EliminarDiagnostico">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Eliminar Diagnostico</wsdl:documentation>
+      <wsdl:input message="tns:EliminarDiagnosticoSoapIn" />
+      <wsdl:output message="tns:EliminarDiagnosticoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="BuscarDiagnostico">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Buscar Diagnostico</wsdl:documentation>
+      <wsdl:input message="tns:BuscarDiagnosticoSoapIn" />
+      <wsdl:output message="tns:BuscarDiagnosticoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ActualizarDiagnostico">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Actualizar Diagnostico</wsdl:documentation>
+      <wsdl:input message="tns:ActualizarDiagnosticoSoapIn" />
+      <wsdl:output message="tns:ActualizarDiagnosticoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ListarAntecedentesFamiliares">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Listar Antecedentes Familiares</wsdl:documentation>
+      <wsdl:input message="tns:ListarAntecedentesFamiliaresSoapIn" />
+      <wsdl:output message="tns:ListarAntecedentesFamiliaresSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AgregarAntecedentesF">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/"> Agregar Antecedentes Familiares</wsdl:documentation>
+      <wsdl:input message="tns:AgregarAntecedentesFSoapIn" />
+      <wsdl:output message="tns:AgregarAntecedentesFSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="EliminarAntecedentesF">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Eliminar Antecedentes Familiares</wsdl:documentation>
+      <wsdl:input message="tns:EliminarAntecedentesFSoapIn" />
+      <wsdl:output message="tns:EliminarAntecedentesFSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="BuscarAntecedentesF">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Buscar Antecedentes Familiares</wsdl:documentation>
+      <wsdl:input message="tns:BuscarAntecedentesFSoapIn" />
+      <wsdl:output message="tns:BuscarAntecedentesFSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ActualizarAntecedentesF">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/"> Actualizar Antecedentes Familiares</wsdl:documentation>
+      <wsdl:input message="tns:ActualizarAntecedentesFSoapIn" />
+      <wsdl:output message="tns:ActualizarAntecedentesFSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ListarAntecedentesPersonales">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Listar Antecedentes Personales</wsdl:documentation>
+      <wsdl:input message="tns:ListarAntecedentesPersonalesSoapIn" />
+      <wsdl:output message="tns:ListarAntecedentesPersonalesSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AgregarAntecedentesP">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Agregar Antecedentes Personales</wsdl:documentation>
+      <wsdl:input message="tns:AgregarAntecedentesPSoapIn" />
+      <wsdl:output message="tns:AgregarAntecedentesPSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="EliminarAntecedentesP">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Eliminar Antecedentes Personales</wsdl:documentation>
+      <wsdl:input message="tns:EliminarAntecedentesPSoapIn" />
+      <wsdl:output message="tns:EliminarAntecedentesPSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="BuscarAntecedentesP">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Buscar Antecedentes Personales</wsdl:documentation>
+      <wsdl:input message="tns:BuscarAntecedentesPSoapIn" />
+      <wsdl:output message="tns:BuscarAntecedentesPSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ActualizarAntecedentesP">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Actualizar Antecedentes Personales</wsdl:documentation>
+      <wsdl:input message="tns:ActualizarAntecedentesPSoapIn" />
+      <wsdl:output message="tns:ActualizarAntecedentesPSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ListarAntecedentesQuirurjicoss">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Listar Antecedentes Quirurjicos</wsdl:documentation>
+      <wsdl:input message="tns:ListarAntecedentesQuirurjicossSoapIn" />
+      <wsdl:output message="tns:ListarAntecedentesQuirurjicossSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AgregarAntecedentesQ">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Agregar Antecedentes Quirurjicos</wsdl:documentation>
+      <wsdl:input message="tns:AgregarAntecedentesQSoapIn" />
+      <wsdl:output message="tns:AgregarAntecedentesQSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="EliminarAntecedentesQ">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Eliminar Antecedentes Quirurjicos</wsdl:documentation>
+      <wsdl:input message="tns:EliminarAntecedentesQSoapIn" />
+      <wsdl:output message="tns:EliminarAntecedentesQSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="BuscarAntecedentesQ">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Buscar Antecedentes Quirurjicos</wsdl:documentation>
+      <wsdl:input message="tns:BuscarAntecedentesQSoapIn" />
+      <wsdl:output message="tns:BuscarAntecedentesQSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ActualizarAntecedentesQ">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Actualizar Antecedentes Quirurjicos</wsdl:documentation>
+      <wsdl:input message="tns:ActualizarAntecedentesQSoapIn" />
+      <wsdl:output message="tns:ActualizarAntecedentesQSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="WebService1Soap" type="tns:WebService1Soap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="ListarPaciente">
+      <soap:operation soapAction="http://tempuri.org/ListarPaciente" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AgregarPaciente">
+      <soap:operation soapAction="http://tempuri.org/AgregarPaciente" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EliminarPaciente">
+      <soap:operation soapAction="http://tempuri.org/EliminarPaciente" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="BuscarPaciente">
+      <soap:operation soapAction="http://tempuri.org/BuscarPaciente" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ActualizarPaciente">
+      <soap:operation soapAction="http://tempuri.org/ActualizarPaciente" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ListarHospital">
+      <soap:operation soapAction="http://tempuri.org/ListarHospital" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AgregarHospitales">
+      <soap:operation soapAction="http://tempuri.org/AgregarHospitales" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EliminarHospital">
+      <soap:operation soapAction="http://tempuri.org/EliminarHospital" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="BuscarHospital">
+      <soap:operation soapAction="http://tempuri.org/BuscarHospital" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ActualizarHospitales">
+      <soap:operation soapAction="http://tempuri.org/ActualizarHospitales" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ListarHistorias">
+      <soap:operation soapAction="http://tempuri.org/ListarHistorias" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AgregarHistorias">
+      <soap:operation soapAction="http://tempuri.org/AgregarHistorias" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EliminarHistoria">
+      <soap:operation soapAction="http://tempuri.org/EliminarHistoria" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="BuscarHistoria">
+      <soap:operation soapAction="http://tempuri.org/BuscarHistoria" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ActualizarHistorias">
+      <soap:operation soapAction="http://tempuri.org/ActualizarHistorias" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ListarUsuarios">
+      <soap:operation soapAction="http://tempuri.org/ListarUsuarios" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AgregarUsuario">
+      <soap:operation soapAction="http://tempuri.org/AgregarUsuario" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EliminarUsuario">
+      <soap:operation soapAction="http://tempuri.org/EliminarUsuario" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="BuscarUsuario">
+      <soap:operation soapAction="http://tempuri.org/BuscarUsuario" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ActualizarUsuario">
+      <soap:operation soapAction="http://tempuri.org/ActualizarUsuario" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Listardoctor">
+      <soap:operation soapAction="http://tempuri.org/Listardoctor" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AgregarDoctores">
+      <soap:operation soapAction="http://tempuri.org/AgregarDoctores" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EliminarDoctor">
+      <soap:operation soapAction="http://tempuri.org/EliminarDoctor" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="BuscarDoctor">
+      <soap:operation soapAction="http://tempuri.org/BuscarDoctor" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ActualizarDoctores">
+      <soap:operation soapAction="http://tempuri.org/ActualizarDoctores" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ListarDiagnostico">
+      <soap:operation soapAction="http://tempuri.org/ListarDiagnostico" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AgregarDiagnostico">
+      <soap:operation soapAction="http://tempuri.org/AgregarDiagnostico" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EliminarDiagnostico">
+      <soap:operation soapAction="http://tempuri.org/EliminarDiagnostico" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="BuscarDiagnostico">
+      <soap:operation soapAction="http://tempuri.org/BuscarDiagnostico" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ActualizarDiagnostico">
+      <soap:operation soapAction="http://tempuri.org/ActualizarDiagnostico" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ListarAntecedentesFamiliares">
+      <soap:operation soapAction="http://tempuri.org/ListarAntecedentesFamiliares" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AgregarAntecedentesF">
+      <soap:operation soapAction="http://tempuri.org/AgregarAntecedentesF" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EliminarAntecedentesF">
+      <soap:operation soapAction="http://tempuri.org/EliminarAntecedentesF" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="BuscarAntecedentesF">
+      <soap:operation soapAction="http://tempuri.org/BuscarAntecedentesF" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ActualizarAntecedentesF">
+      <soap:operation soapAction="http://tempuri.org/ActualizarAntecedentesF" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ListarAntecedentesPersonales">
+      <soap:operation soapAction="http://tempuri.org/ListarAntecedentesPersonales" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AgregarAntecedentesP">
+      <soap:operation soapAction="http://tempuri.org/AgregarAntecedentesP" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EliminarAntecedentesP">
+      <soap:operation soapAction="http://tempuri.org/EliminarAntecedentesP" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="BuscarAntecedentesP">
+      <soap:operation soapAction="http://tempuri.org/BuscarAntecedentesP" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ActualizarAntecedentesP">
+      <soap:operation soapAction="http://tempuri.org/ActualizarAntecedentesP" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ListarAntecedentesQuirurjicoss">
+      <soap:operation soapAction="http://tempuri.org/ListarAntecedentesQuirurjicoss" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AgregarAntecedentesQ">
+      <soap:operation soapAction="http://tempuri.org/AgregarAntecedentesQ" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EliminarAntecedentesQ">
+      <soap:operation soapAction="http://tempuri.org/EliminarAntecedentesQ" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="BuscarAntecedentesQ">
+      <soap:operation soapAction="http://tempuri.org/BuscarAntecedentesQ" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ActualizarAntecedentesQ">
+      <soap:operation soapAction="http://tempuri.org/ActualizarAntecedentesQ" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="WebService1Soap12" type="tns:WebService1Soap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="ListarPaciente">
+      <soap12:operation soapAction="http://tempuri.org/ListarPaciente" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AgregarPaciente">
+      <soap12:operation soapAction="http://tempuri.org/AgregarPaciente" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EliminarPaciente">
+      <soap12:operation soapAction="http://tempuri.org/EliminarPaciente" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="BuscarPaciente">
+      <soap12:operation soapAction="http://tempuri.org/BuscarPaciente" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ActualizarPaciente">
+      <soap12:operation soapAction="http://tempuri.org/ActualizarPaciente" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ListarHospital">
+      <soap12:operation soapAction="http://tempuri.org/ListarHospital" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AgregarHospitales">
+      <soap12:operation soapAction="http://tempuri.org/AgregarHospitales" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EliminarHospital">
+      <soap12:operation soapAction="http://tempuri.org/EliminarHospital" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="BuscarHospital">
+      <soap12:operation soapAction="http://tempuri.org/BuscarHospital" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ActualizarHospitales">
+      <soap12:operation soapAction="http://tempuri.org/ActualizarHospitales" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ListarHistorias">
+      <soap12:operation soapAction="http://tempuri.org/ListarHistorias" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AgregarHistorias">
+      <soap12:operation soapAction="http://tempuri.org/AgregarHistorias" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EliminarHistoria">
+      <soap12:operation soapAction="http://tempuri.org/EliminarHistoria" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="BuscarHistoria">
+      <soap12:operation soapAction="http://tempuri.org/BuscarHistoria" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ActualizarHistorias">
+      <soap12:operation soapAction="http://tempuri.org/ActualizarHistorias" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ListarUsuarios">
+      <soap12:operation soapAction="http://tempuri.org/ListarUsuarios" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AgregarUsuario">
+      <soap12:operation soapAction="http://tempuri.org/AgregarUsuario" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EliminarUsuario">
+      <soap12:operation soapAction="http://tempuri.org/EliminarUsuario" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="BuscarUsuario">
+      <soap12:operation soapAction="http://tempuri.org/BuscarUsuario" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ActualizarUsuario">
+      <soap12:operation soapAction="http://tempuri.org/ActualizarUsuario" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Listardoctor">
+      <soap12:operation soapAction="http://tempuri.org/Listardoctor" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AgregarDoctores">
+      <soap12:operation soapAction="http://tempuri.org/AgregarDoctores" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EliminarDoctor">
+      <soap12:operation soapAction="http://tempuri.org/EliminarDoctor" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="BuscarDoctor">
+      <soap12:operation soapAction="http://tempuri.org/BuscarDoctor" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ActualizarDoctores">
+      <soap12:operation soapAction="http://tempuri.org/ActualizarDoctores" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ListarDiagnostico">
+      <soap12:operation soapAction="http://tempuri.org/ListarDiagnostico" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AgregarDiagnostico">
+      <soap12:operation soapAction="http://tempuri.org/AgregarDiagnostico" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EliminarDiagnostico">
+      <soap12:operation soapAction="http://tempuri.org/EliminarDiagnostico" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="BuscarDiagnostico">
+      <soap12:operation soapAction="http://tempuri.org/BuscarDiagnostico" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ActualizarDiagnostico">
+      <soap12:operation soapAction="http://tempuri.org/ActualizarDiagnostico" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ListarAntecedentesFamiliares">
+      <soap12:operation soapAction="http://tempuri.org/ListarAntecedentesFamiliares" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AgregarAntecedentesF">
+      <soap12:operation soapAction="http://tempuri.org/AgregarAntecedentesF" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EliminarAntecedentesF">
+      <soap12:operation soapAction="http://tempuri.org/EliminarAntecedentesF" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="BuscarAntecedentesF">
+      <soap12:operation soapAction="http://tempuri.org/BuscarAntecedentesF" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ActualizarAntecedentesF">
+      <soap12:operation soapAction="http://tempuri.org/ActualizarAntecedentesF" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ListarAntecedentesPersonales">
+      <soap12:operation soapAction="http://tempuri.org/ListarAntecedentesPersonales" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AgregarAntecedentesP">
+      <soap12:operation soapAction="http://tempuri.org/AgregarAntecedentesP" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EliminarAntecedentesP">
+      <soap12:operation soapAction="http://tempuri.org/EliminarAntecedentesP" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="BuscarAntecedentesP">
+      <soap12:operation soapAction="http://tempuri.org/BuscarAntecedentesP" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ActualizarAntecedentesP">
+      <soap12:operation soapAction="http://tempuri.org/ActualizarAntecedentesP" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ListarAntecedentesQuirurjicoss">
+      <soap12:operation soapAction="http://tempuri.org/ListarAntecedentesQuirurjicoss" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AgregarAntecedentesQ">
+      <soap12:operation soapAction="http://tempuri.org/AgregarAntecedentesQ" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EliminarAntecedentesQ">
+      <soap12:operation soapAction="http://tempuri.org/EliminarAntecedentesQ" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="BuscarAntecedentesQ">
+      <soap12:operation soapAction="http://tempuri.org/BuscarAntecedentesQ" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ActualizarAntecedentesQ">
+      <soap12:operation soapAction="http://tempuri.org/ActualizarAntecedentesQ" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="WebService1">
+    <wsdl:port name="WebService1Soap" binding="tns:WebService1Soap">
+      <soap:address location="https://localhost:44392/WebService1.asmx" />
+    </wsdl:port>
+    <wsdl:port name="WebService1Soap12" binding="tns:WebService1Soap12">
+      <soap12:address location="https://localhost:44392/WebService1.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>
